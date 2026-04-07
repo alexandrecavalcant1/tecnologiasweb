@@ -3,181 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre Abreu Cavalcanti</title>
+    <title>Alexandre Abreu - Soluções em TI</title>
     <style>
         :root {
-            --cor-fundo: #ffffff;
-            --cor-texto: #1a1a1a;
-            --cor-suave: #666666;
-            --cor-detalhe: #000000;
-            --cor-borda: #eeeeee;
+            --primary: #0284c7; /* Azul empresarial */
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --border: #e2e8f0;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background: var(--cor-fundo);
-            color: var(--cor-texto);
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
-            padding: 40px 20px;
         }
 
-        .wrapper {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* CABEÇALHO */
+        /* HEADER */
         header {
-            margin-bottom: 50px;
+            background: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
         }
 
         header h1 {
-            font-size: 2rem;
-            letter-spacing: -0.5px;
+            font-size: 1.8rem;
+            color: var(--dark);
             margin-bottom: 5px;
         }
 
         header p {
-            color: var(--cor-suave);
-            font-size: 1.1rem;
-        }
-
-        /* NAVEGAÇÃO */
-        nav {
-            margin-bottom: 50px;
-            border-bottom: 1px solid var(--cor-borda);
-            padding-bottom: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--cor-texto);
-            font-weight: 500;
-            margin-right: 25px;
-            font-size: 0.9rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* SEÇÕES */
-        section {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            color: var(--cor-suave);
-        }
-
-        p, ul {
-            font-size: 1.05rem;
-        }
-
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* ETIQUETAS */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            background: #f4f4f4;
-            padding: 5px 12px;
-            border-radius: 4px;
             font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
-        /* RODAPÉ */
+        /* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* GRID DE SERVIÇOS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        /* SEÇÃO CONTATO */
+        .contact-box {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-radius: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+        }
+
         footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid var(--cor-borda);
-            color: var(--cor-suave);
-            font-size: 0.85rem;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #64748b;
         }
 
-        /* MOBILE */
-        @media (max-width: 500px) {
-            nav a {
-                display: block;
-                margin-bottom: 10px;
-            }
+        @media (max-width: 600px) {
+            .services-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <header>
-        <h1>Alexandre Abreu Cavalcanti</h1>
-        <p>Desenvolvedor Full-Stack & TI</p>
-    </header>
+<header>
+    <h1>Alexandre Abreu Cavalcanti</h1>
+    <p>Consultoria e Soluções Tecnológicas</p>
+</header>
 
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<div class="container">
+    <div class="intro">
+        <h2>Nossos Serviços</h2>
+        <p>Soluções completas para otimizar e proteger sua empresa.</p>
+    </div>
 
-    <section id="sobre">
-        <h2>Sobre</h2>
-        <p>
-            Especialista em TI focado em desenvolvimento web e automação de processos. 
-            Atualmente dedicado à Segurança da Informação e estudos para concursos públicos.
-        </p>
-    </section>
-
-    <section id="habilidades">
-        <h2>Habilidades</h2>
-        <div class="skills">
-            <span class="skill">Suporte Técnico</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">PHP</span>
-            <span class="skill">MySQL</span>
-            <span class="skill">Segurança da Informação</span>
+    <div class="services-grid">
+        <div class="card">
+            <h3>Certificado Digital</h3>
+            <p>Emissão e renovação de certificados e-CPF e e-CNPJ com agilidade e segurança.</p>
         </div>
-    </section>
 
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <ul>
-            <li><strong>Sistemas Web:</strong> Aplicações completas em PHP/MySQL.</li>
-            <li><strong>Automação:</strong> Integrações financeiras (Pix/Boleto).</li>
-            <li><strong>Dados:</strong> Importação e tratamento de grandes volumes de dados.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h3>Gestão Empresarial (ERP)</h3>
+            <p>Sistemas integrados para controle financeiro, estoque e emissão de notas fiscais.</p>
+        </div>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>E-mail: aac14@aluno.ifal.edu.br</p>
-        <p>GitHub: alexandrecavalcant1</p>
-    </section>
+        <div class="card">
+            <h3>Antivírus e Licenciamento</h3>
+            <p>Revenda autorizada de licenças Windows, Office e soluções de antivírus corporativo.</p>
+        </div>
 
-    <footer>
-        &copy; 2026 Alexandre Abreu Cavalcanti
-    </footer>
+        <div class="card">
+            <h3>Suporte Técnico</h3>
+            <p>Manutenção preventiva e corretiva de computadores, redes e periféricos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Suporte em Sistemas</h3>
+            <p>Assistência especializada para softwares de gestão e automação comercial.</p>
+        </div>
+
+        <div class="card">
+            <h3>Revenda de Software</h3>
+            <p>Soluções de prateleira e sob medida para necessidades específicas do seu negócio.</p>
+        </div>
+    </div>
+
+    <section class="contact-box">
+        <h2>Precisa de suporte especializado?</h2>
+        <p>Entre em contato agora e solicite um orçamento sem compromisso.</p>
+        <a href="mailto:aac14@aluno.ifal.edu.br" class="btn">Solicitar Orçamento</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Email: aac14@aluno.ifal.edu.br</p>
+    </section>
 </div>
+
+<footer>
+    &copy; 2026 Alexandre Abreu Cavalcanti - Serviços de TI. Todos os direitos reservados.
+</footer>
 
 </body>
 </html>
