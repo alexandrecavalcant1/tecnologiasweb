@@ -1,1 +1,188 @@
-teste
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandre Abreu Cavalcanti | Profissional de TI</title>
+    <style>
+        /* CSS Incorporado para facilitar o teste inicial. 
+           Futuramente, você pode mover isso para um arquivo style.css */
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f4f4f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #ecf0f1;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Seções */
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid de Habilidades */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        /* Responsividade básica */
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alexandre Abreu Cavalcanti</h1>
+        <p>Profissional de TI | Desenvolvedor Web Full-Stack</p>
+    </header>
+
+    <nav>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Sou um profissional de Tecnologia da Informação baseado em Arapiraca, AL, com forte atuação em desenvolvimento web e suporte técnico. Tenho experiência em criar sistemas de gestão e rotinas administrativas, sempre buscando entregar soluções digitais eficientes. Atualmente também estou aprofundando meus estudos na área de segurança da informação (Blue Team) e preparação para concursos públicos em TI.</p>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">HTML5 & CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Python (Django)</span>
+                <span class="skill-tag">Suporte a Usuários</span>
+                <span class="skill-tag">Integração de APIs</span>
+                <span class="skill-tag">Segurança da Informação</span>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos Recentes</h2>
+            <ul>
+                <li><strong>Sistemas de Gestão Web:</strong> Desenvolvimento de plataformas full-stack em PHP/MySQL.</li>
+                <li><strong>Automação de Pagamentos:</strong> Integração com APIs financeiras para geração de boletos, carnês e Pix.</li>
+                <li><strong>Gestão de Dados:</strong> Implementação de rotinas de importação de grandes volumes de dados (CSV/Excel) para bancos relacionais.</li>
+            </ul>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Interessado em desenvolver um projeto ou quer bater um papo sobre tecnologia? Entre em contato:</p>
+            <br>
+            <p>📧 Email: seu-email@exemplo.com</p>
+            <p>💼 LinkedIn: linkedin.com/in/seu-perfil</p>
+            <p>🐙 GitHub: github.com/seu-usuario</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Alexandre Abreu Cavalcanti. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
