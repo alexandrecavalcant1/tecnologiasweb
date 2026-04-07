@@ -1,165 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alexandre Abreu Cavalcanti</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandre Abreu Cavalcanti | Portfolio</title>
 
-<style>
-:root {
-    --primary: #1e293b;
-    --secondary: #3b82f6;
-    --accent: #22c55e;
-    --bg: #f1f5f9;
-    --card: #ffffff;
-    --text: #1e293b;
-}
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #3b82f6;
+            --accent: #10b981;
+            --bg: #020617;
+            --card: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --gradient: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%);
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
-body {
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-}
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, var(--primary), #334155);
-    color: white;
-    text-align: center;
-    padding: 4rem 1rem;
-}
+        /* HEADER */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top right, #1e293b, transparent),
+                        radial-gradient(circle at bottom left, #0f172a, transparent);
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
 
-header h1 {
-    font-size: 2.8rem;
-}
+        header h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
 
-header p {
-    opacity: 0.8;
-    margin-top: 0.5rem;
-}
+        header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            max-width: 600px;
+        }
 
-/* NAV */
-nav {
-    background: var(--secondary);
-    position: sticky;
-    top: 0;
-    padding: 0.8rem;
-    text-align: center;
-}
+        /* NAV */
+        nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            padding: 1rem;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 600;
-    position: relative;
-}
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
 
-nav a::after {
-    content: "";
-    width: 0;
-    height: 2px;
-    background: white;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    transition: 0.3s;
-}
+        nav a:hover {
+            color: var(--secondary);
+        }
 
-nav a:hover::after {
-    width: 100%;
-}
+        /* CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 4rem 1.5rem;
+        }
 
-/* CONTAINER */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem 1rem;
-}
+        /* SECTIONS */
+        section {
+            background: var(--card);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-/* SECTIONS */
-section {
-    background: var(--card);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
 
-section:hover {
-    transform: translateY(-5px);
-}
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-section h2 {
-    margin-bottom: 1rem;
-    color: var(--primary);
-}
+        h2::before {
+            content: "";
+            width: 4px;
+            height: 24px;
+            background: var(--gradient);
+            border-radius: 4px;
+            display: inline-block;
+        }
 
-/* SKILLS */
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+        /* SKILLS */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-.skill-tag {
-    background: var(--secondary);
-    color: white;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    transition: 0.3s;
-}
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
 
-.skill-tag:hover {
-    background: var(--accent);
-}
+        /* PROJETOS */
+        ul { list-style: none; }
+        
+        ul li {
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border-left: 3px solid var(--secondary);
+        }
 
-/* PROJETOS */
-ul li {
-    margin-bottom: 10px;
-}
+        /* CONTATO */
+        .contact-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 24px;
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
 
-/* CONTATO */
-#contato p {
-    margin: 8px 0;
-}
+        .contact-link:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+        }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: var(--primary);
-    color: white;
-}
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
 
-/* RESPONSIVO */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav a {
-        display: block;
-        margin: 8px 0;
-    }
-}
-</style>
+        /* RESPONSIVO */
+        @media (max-width: 600px) {
+            nav { display: none; } /* Mobile simplificado */
+            section { padding: 1.5rem; }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Alexandre Abreu Cavalcanti</h1>
-    <p>Desenvolvedor Web Full-Stack • Profissional de TI</p>
+    <h1>Alexandre Abreu</h1>
+    <p>Full-Stack Developer • Especialista em TI • Blue Team Enthusiast</p>
 </header>
 
 <nav>
@@ -174,43 +209,45 @@ footer {
 <section id="sobre">
     <h2>Sobre Mim</h2>
     <p>
-        Profissional de Tecnologia da Informação com experiência em desenvolvimento web e suporte técnico.
-        Atuo na criação de sistemas de gestão e automação de processos administrativos.
-        Atualmente focado em segurança da informação (Blue Team) e preparação para concursos públicos em TI.
+        Profissional de Tecnologia da Informação com sólida experiência em suporte técnico e desenvolvimento de sistemas. 
+        Especializado na criação de ferramentas de <strong>automação administrativa</strong> e gestão de dados. 
+        Atualmente, direciono meus estudos para a área de Cibersegurança e excelência em concursos de TI.
     </p>
 </section>
 
 <section id="habilidades">
-    <h2>Habilidades</h2>
+    <h2>Habilidades Técnicas</h2>
     <div class="skills-grid">
-        <span class="skill-tag">Suporte Técnico</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">PHP</span>
-        <span class="skill-tag">MySQL</span>
-        <span class="skill-tag">APIs</span>
+        <span class="skill-tag">JavaScript / ES6</span>
+        <span class="skill-tag">PHP 8+</span>
+        <span class="skill-tag">MySQL & Query Opt.</span>
+        <span class="skill-tag">REST APIs</span>
         <span class="skill-tag">Segurança da Informação</span>
+        <span class="skill-tag">Suporte Nível 2/3</span>
+        <span class="skill-tag">Linux / Servidores</span>
     </div>
 </section>
 
 <section id="projetos">
-    <h2>Projetos</h2>
+    <h2>Destaques de Projetos</h2>
     <ul>
-        <li><strong>Sistemas Web:</strong> Plataformas completas em PHP/MySQL</li>
-        <li><strong>Automação Financeira:</strong> Integração com APIs de boletos e Pix</li>
-        <li><strong>Importação de Dados:</strong> Processamento de CSV/Excel em larga escala</li>
+        <li><strong>Sistemas Web:</strong> Desenvolvimento de ERPs customizados para gestão empresarial.</li>
+        <li><strong>Automação Financeira:</strong> Fluxos de pagamentos integrados com gateways modernos (Pix/Boleto).</li>
+        <li><strong>Data Processing:</strong> Algoritmos de alta performance para tratamento de grandes volumes de dados.</li>
     </ul>
 </section>
 
 <section id="contato">
-    <h2>Contato</h2>
-    <p>📧 aac14@aluno.ifal.edu.br</p>
-    <p>🐙 github.com/alexandrecavalcant1</p>
+    <h2>Vamos Conversar?</h2>
+    <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Estou aberto a novas oportunidades e colaborações técnicas.</p>
+    <a href="mailto:aac14@aluno.ifal.edu.br" class="contact-link">📧 E-mail Oficial</a>
+    <a href="https://github.com/alexandrecavalcant1" target="_blank" class="contact-link">🐙 GitHub</a>
 </section>
 
 </div>
 
 <footer>
-    © 2026 • Alexandre Abreu Cavalcanti
+    &copy; 2026 • Construído com foco e código por Alexandre Abreu Cavalcanti
 </footer>
 
 </body>
