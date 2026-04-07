@@ -1,180 +1,217 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre Abreu Cavalcanti</title>
-    <style>
-        
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --bg-color: #f4f4f9;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandre Abreu Cavalcanti</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<style>
+:root {
+    --primary: #1e293b;
+    --secondary: #3b82f6;
+    --accent: #22c55e;
+    --bg: #f1f5f9;
+    --card: #ffffff;
+    --text: #1e293b;
+}
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
 
-        /* Cabeçalho */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+/* HEADER */
+header {
+    background: linear-gradient(135deg, var(--primary), #334155);
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+}
 
-        header p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #ecf0f1;
-        }
+header h1 {
+    font-size: 2.8rem;
+}
 
-        /* Navegação */
-        nav {
-            background-color: var(--secondary-color);
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+header p {
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+/* NAV */
+nav {
+    background: var(--secondary);
+    position: sticky;
+    top: 0;
+    padding: 0.8rem;
+    text-align: center;
+}
 
-        nav a:hover {
-            color: var(--primary-color);
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    position: relative;
+}
 
-        /* Container Principal */
-        .container {
-            max-width: 960px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+nav a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.3s;
+}
 
-        /* Seções */
-        section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+nav a:hover::after {
+    width: 100%;
+}
 
-        section h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
 
-        /* Grid de Habilidades */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+/* SECTIONS */
+section {
+    background: var(--card);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
 
-        .skill-tag {
-            background-color: var(--bg-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            border: 1px solid #ddd;
-            font-size: 0.9rem;
-        }
+section:hover {
+    transform: translateY(-5px);
+}
 
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: var(--primary-color);
-            color: white;
-            margin-top: 2rem;
-        }
+section h2 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
 
-        /* Responsividade básica */
-        @media (max-width: 600px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-    </style>
+/* SKILLS */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: var(--secondary);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.skill-tag:hover {
+    background: var(--accent);
+}
+
+/* PROJETOS */
+ul li {
+    margin-bottom: 10px;
+}
+
+/* CONTATO */
+#contato p {
+    margin: 8px 0;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary);
+    color: white;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Alexandre Abreu Cavalcanti</h1>
-        <p>Profissional de TI | Desenvolvedor Web Full-Stack</p>
-    </header>
+<header>
+    <h1>Alexandre Abreu Cavalcanti</h1>
+    <p>Desenvolvedor Web Full-Stack • Profissional de TI</p>
+</header>
 
-    <nav>
-        <a href="#sobre">Sobre Mim</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+</nav>
 
-    <div class="container">
-        
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Sou um profissional de Tecnologia da Informação baseado em Arapiraca, AL, com forte atuação em desenvolvimento web e suporte técnico. Tenho experiência em criar sistemas de gestão e rotinas administrativas, sempre buscando entregar soluções digitais eficientes. Atualmente também estou aprofundando meus estudos na área de segurança da informação (Blue Team) e preparação para concursos públicos em TI.</p>
-        </section>
+<div class="container">
 
-        <section id="habilidades">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Suporte Técnico</span>
-                <span class="skill-tag">Emissão de Certificado Digital</span>
-                <span class="skill-tag">Desenvolvimento de Software</span>
-                <span class="skill-tag">JavaScript</span>
-          
-            </div>
-        </section>
+<section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>
+        Profissional de Tecnologia da Informação com experiência em desenvolvimento web e suporte técnico.
+        Atuo na criação de sistemas de gestão e automação de processos administrativos.
+        Atualmente focado em segurança da informação (Blue Team) e preparação para concursos públicos em TI.
+    </p>
+</section>
 
-        <section id="projetos">
-            <h2>Projetos Recentes</h2>
-            <ul>
-                <li><strong>Sistemas de Gestão Web:</strong> Desenvolvimento de plataformas full-stack em PHP/MySQL.</li>
-                <li><strong>Automação de Pagamentos:</strong> Integração com APIs financeiras para geração de boletos, carnês e Pix.</li>
-                <li><strong>Gestão de Dados:</strong> Implementação de rotinas de importação de grandes volumes de dados (CSV/Excel) para bancos relacionais.</li>
-            </ul>
-        </section>
-
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>📧 Email: aac14@aluno.ifal.edu.br</p>
-            <p>🐙 GitHub: github.com/alexandrecavalcant1</p>
-        </section>
-
+<section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="skills-grid">
+        <span class="skill-tag">Suporte Técnico</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">APIs</span>
+        <span class="skill-tag">Segurança da Informação</span>
     </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026</p>
-    </footer>
+<section id="projetos">
+    <h2>Projetos</h2>
+    <ul>
+        <li><strong>Sistemas Web:</strong> Plataformas completas em PHP/MySQL</li>
+        <li><strong>Automação Financeira:</strong> Integração com APIs de boletos e Pix</li>
+        <li><strong>Importação de Dados:</strong> Processamento de CSV/Excel em larga escala</li>
+    </ul>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <p>📧 aac14@aluno.ifal.edu.br</p>
+    <p>🐙 github.com/alexandrecavalcant1</p>
+</section>
+
+</div>
+
+<footer>
+    © 2026 • Alexandre Abreu Cavalcanti
+</footer>
 
 </body>
 </html>
