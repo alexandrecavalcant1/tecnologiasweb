@@ -1,2 +1,4 @@
 # tecnologiasweb
-Trabalho SI
+Página simples utilizando apenas HTML e CSS.
+
+Trabalho da Disciplina de Tecnologias Web.
