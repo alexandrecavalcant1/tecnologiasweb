@@ -3,263 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre Soluções Digitais | Tecnologia e Sistemas</title>
+    <title>Alexandre Soluções Digitais</title>
     <style>
-        /* --- Variáveis de Cores --- */
         :root {
-            --primary-color: #0A2540;    /* Azul Escuro Corporativo */
-            --secondary-color: #007BFF;  /* Azul Brilhante */
-            --accent-color: #00D4FF;     /* Ciano para destaques */
-            --bg-light: #F6F9FC;         /* Fundo Cinza Claro */
-            --text-main: #32325D;        /* Texto Principal */
-            --text-muted: #6B7C93;       /* Texto Secundário */
-            --white: #FFFFFF;
+            --azul-escuro: #0A2540;
+            --azul-claro: #007BFF;
         }
 
-        /* --- Reset e Tipografia --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
         }
 
-        /* --- Cabeçalho e Navegação --- */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1.2rem 5%;
+        .topo-site {
+            background: var(--azul-escuro);
+            color: #fff;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- Seção Hero (Destaque Principal) --- */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 2rem;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            color: #E0E6ED;
-        }
-
-        .btn {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
+        .marca {
+            font-size: 24px;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.2s, background-color 0.2s;
-            display: inline-block;
+        }
+        .marca span { color: #00D4FF; }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
         }
 
-        .btn:hover {
-            background-color: var(--white);
-            transform: translateY(-2px);
+        .menu a {
+            color: #fff;
+            text-decoration: none;
         }
+        .menu a:hover { color: #00D4FF; }
 
-        /* --- Seção de Serviços --- */
-        .services-section {
-            padding: 5rem 5%;
+        .destaque-topo {
+            background: linear-gradient(120deg, var(--azul-escuro), var(--azul-claro));
+            color: white;
             text-align: center;
+            padding: 80px 20px;
         }
 
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
+        .destaque-topo h1 { font-size: 2.5em; margin-bottom: 15px; }
+        .destaque-topo p { 
+            font-size: 1.1em; 
+            max-width: 700px; 
+            margin: 0 auto 30px; 
+            color: #ececec;
         }
 
-        .section-title::after {
-            content: '';
+        .botao-acao {
+            background: #00D4FF;
+            color: #000;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        .botao-acao:hover { background: #fff; }
+
+        #area-servicos {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            color: var(--azul-escuro);
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .grid-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .box-servico {
+            background: #fff;
+            width: 100%;
+            max-width: 340px;
+            padding: 30px 20px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.2s;
+        }
+
+        .box-servico:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--azul-claro);
+        }
+
+        .box-servico .icone {
+            font-size: 35px;
+            margin-bottom: 15px;
             display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .box-servico h3 {
+            color: var(--azul-escuro);
+            margin-bottom: 10px;
+            font-size: 18px;
         }
 
-        .service-card {
-            background-color: var(--white);
-            padding: 2.5rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-            border-bottom: 4px solid transparent;
+        .box-servico p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-bottom: 4px solid var(--secondary-color);
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- Rodapé --- */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .rodape {
+            background: #0A2540;
+            color: #ccc;
             text-align: center;
-            padding: 2rem 5%;
-            margin-top: 2rem;
+            padding: 30px 15px;
+            margin-top: 40px;
+            font-size: 14px;
         }
 
-        .footer-info {
-            margin-bottom: 1rem;
-            color: #A0AABF;
-            font-size: 0.9rem;
-        }
-
-        /* --- Responsividade --- */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
+            .topo-site { flex-direction: column; text-align: center; gap: 15px; }
+            .menu ul { flex-direction: column; gap: 10px; }
+            .destaque-topo { padding: 50px 15px; }
+            .destaque-topo h1 { font-size: 2em; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Alexandre <span>Soluções Digitais</span></div>
-        <nav>
+    <div class="topo-site">
+        <div class="marca">Alexandre <span>Soluções Digitais</span></div>
+        <nav class="menu">
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#area-servicos">Serviços</a></li>
+                <li><a href="#contato">Fale Conosco</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
 
-    <section id="inicio" class="hero">
-        <h1>Tecnologia de Ponta para o seu Negócio</h1>
-        <p>Desenvolvimento de sistemas sob medida, infraestrutura fiscal, emissão de certificados e suporte técnico contínuo para empresas que buscam inovação.</p>
-        <a href="#servicos" class="btn">Conheça Nossas Soluções</a>
-    </section>
+    <div class="destaque-topo">
+        <h1>Soluções em Tecnologia para o seu Negócio</h1>
+        <p>Desenvolvimento web, infraestrutura fiscal, certificados digitais e suporte técnico especializado para manter sua empresa rodando sem interrupções.</p>
+        <a href="#area-servicos" class="botao-acao">Ver Portfólio</a>
+    </div>
 
-    <section id="servicos" class="services-section">
-        <h2 class="section-title">Nossos Serviços</h2>
+    <div id="area-servicos">
+        <h2 class="titulo-secao">O que eu ofereço</h2>
         
-        <div class="services-grid">
+        <div class="grid-cards">
             
-            <div class="service-card">
-                <div class="icon">🔐</div>
+            <div class="box-servico">
+                <span class="icone">🔐</span>
                 <h3>Certificados Digitais A1 e A3</h3>
-                <p>Emissão rápida e segura de certificados digitais para pessoa física e jurídica. Garanta a validade jurídica das suas operações e transações eletrônicas sem burocracia.</p>
+                <p>Emissão rápida e sem burocracia para pessoas físicas e jurídicas. Tenha segurança e validade jurídica em todas as suas transações e assinaturas eletrônicas.</p>
             </div>
 
-            <div class="service-card">
-                <div class="icon">💻</div>
-                <h3>Desenvolvimento de Sites</h3>
-                <p>Criação de sites profissionais e sistemas web administrativos full-stack (PHP, MySQL, HTML/CSS, JS). Plataformas sob medida, incluindo integrações robustas para pagamentos (Pix e Boletos).</p>
+            <div class="box-servico">
+                <span class="icone">💻</span>
+                <h3>Desenvolvimento de Sites e Sistemas</h3>
+                <p>Projetos web institucionais e sistemas administrativos completos. Desenvolvimento full-stack focado na necessidade real da sua operação.</p>
             </div>
 
-            <div class="service-card">
-                <div class="icon">🧾</div>
-                <h3>Software para Notas Fiscais</h3>
-                <p>Implantação de sistema emissor ágil para NF-e, NFC-e e NFS-e. Simplifique a gestão fiscal da sua empresa, garantindo total conformidade com a legislação vigente.</p>
+            <div class="box-servico">
+                <span class="icone">🧾</span>
+                <h3>Sistemas para Notas Fiscais</h3>
+                <p>Instalação e configuração de software para emissão de NF-e, NFC-e e NFS-e. Facilite a gestão fiscal da empresa respeitando todas as normas da Sefaz.</p>
             </div>
 
-            <div class="service-card">
-                <div class="icon">👥</div>
-                <h3>Software para Folha de Pagamento</h3>
-                <p>Gestão completa de RH e departamento pessoal. Automação de holerites, controle de ponto, férias, encargos e obrigações trabalhistas com precisão e segurança de dados.</p>
+            <div class="box-servico">
+                <span class="icone">👥</span>
+                <h3>Software de Folha de Pagamento</h3>
+                <p>Sistemas para gestão de recursos humanos e departamento pessoal. Controle ponto, férias, holerites e encargos de forma muito mais automatizada.</p>
             </div>
 
-            <div class="service-card">
-                <div class="icon">🛠️</div>
-                <h3>Suporte Técnico 7/24</h3>
-                <p>Serviço de Helpdesk contínuo e monitoramento preventivo. Suporte especializado 24 horas por dia, 7 dias por semana, garantindo que a sua operação e infraestrutura de TI nunca parem.</p>
+            <div class="box-servico">
+                <span class="icone">🛠️</span>
+                <h3>Suporte de TI 24/7</h3>
+                <p>Helpdesk e suporte técnico preventivo e corretivo. Atendimento a qualquer hora do dia ou da semana para garantir que sua tecnologia não te deixe na mão.</p>
             </div>
 
         </div>
-    </section>
+    </div>
 
-    <footer id="contato">
-        <div class="footer-info">
-            <p><strong>Alexandre Soluções Digitais</strong> - O parceiro ideal para a transformação digital da sua empresa.</p>
-            <p>Atendimento especializado em Arapiraca, AL e para todo o Brasil.</p>
-        </div>
-        <p>&copy; 2026 Alexandre Soluções Digitais. Todos os direitos reservados.</p>
-    </footer>
+    <div class="rodape" id="contato">
+        <p><strong>Alexandre Soluções Digitais</strong> - Tecnologia e confiança lado a lado.</p>
+        <p style="margin-top: 10px;">&copy; 2026. Todos os direitos reservados.</p>
+    </div>
 
 </body>
 </html>
