@@ -10,159 +10,161 @@
             --dark: #0f172a;
             --light: #f8fafc;
             --border: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
-            overflow-x: hidden; /* Evita scroll horizontal indesejado */
         }
 
-        /* HEADER RESPONSIVO */
+        /* HEADER EXPANDIDO */
         header {
             background: white;
-            padding: clamp(1.5rem, 5vw, 3rem) 1rem;
+            padding: 4rem 2rem;
             text-align: center;
             border-bottom: 4px solid var(--primary);
             box-shadow: var(--shadow);
         }
 
         header h1 {
-            font-size: clamp(1.5rem, 6vw, 2.5rem); /* Tamanho de fonte adaptável */
-            color: var(--dark);
-            margin-bottom: 8px;
-            font-weight: 800;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: -1px;
         }
 
         header p {
             color: var(--primary);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: clamp(0.75rem, 3vw, 1rem);
-            letter-spacing: 2px;
+            letter-spacing: 4px;
+            margin-top: 10px;
         }
 
-        /* CONTAINER */
+        /* CONTAINER AMPLO */
         .container {
-            width: 100%;
-            max-width: 1100px;
+            width: 95%;
+            max-width: 1400px; /* Aumentado para ocupar mais a tela desktop */
             margin: 0 auto;
-            padding: clamp(1.5rem, 5vw, 4rem) 1.5rem;
+            padding: 4rem 2rem;
         }
 
         .intro {
             text-align: center;
-            margin-bottom: clamp(2rem, 8vw, 4rem);
+            margin-bottom: 4rem;
         }
 
         .intro h2 {
-            font-size: clamp(1.4rem, 5vw, 2rem);
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
-        .intro p {
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* GRID DE SERVIÇOS RESPONSIVO */
+        /* GRID DE SERVIÇOS EXPANDIDA */
         .services-grid {
             display: grid;
-            /* Cria colunas automaticamente baseadas no espaço disponível */
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            /* No desktop, garante 3 colunas bem distribuídas */
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
+            padding: 3rem;
+            border-radius: 16px;
             border: 1px solid var(--border);
             transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--primary);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
         }
 
         .card h3 {
             color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
-        .card p {
-            font-size: 0.95rem;
-            color: #475569;
-            flex-grow: 1;
-        }
-
-        /* CONTATO RESPONSIVO */
+        /* SEÇÃO DE CONTATO WIDE (Lado a Lado no Desktop) */
         .contact-box {
             background: var(--dark);
             color: white;
-            padding: clamp(2rem, 8vw, 4rem) 1.5rem;
+            padding: 4rem;
+            margin-top: 6rem;
+            border-radius: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            gap: 40px;
+        }
+
+        .contact-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-action {
+            flex: 0;
+            min-width: 300px;
             text-align: center;
-            margin-top: clamp(3rem, 10vw, 6rem);
-            border-radius: 16px;
         }
 
         .btn {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 14px 32px;
+            padding: 18px 45px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: bold;
-            margin-top: 25px;
-            transition: background 0.3s ease;
-            width: 100%; /* Botão ocupa largura total no mobile */
-            max-width: 300px; /* Mas não cresce demais no desktop */
+            font-size: 1.1rem;
+            transition: 0.3s;
+            white-space: nowrap;
         }
 
         .btn:hover {
-            background: #0369a1;
+            background: #0ea5e9;
+            transform: scale(1.05);
         }
 
         footer {
             text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.85rem;
-            color: #64748b;
-            border-top: 1px solid var(--border);
+            padding: 4rem 2rem;
+            color: #94a3b8;
+            font-size: 1rem;
         }
 
-        /* AJUSTES PARA TELAS MUITO PEQUENAS (SMARTPHONES) */
-        @media (max-width: 480px) {
-            .services-grid {
-                grid-template-columns: 1fr; /* Força uma coluna só */
+        /* AJUSTES PARA MOBILE */
+        @media (max-width: 768px) {
+            .contact-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 2.5rem;
             }
             
             .card {
-                padding: 1.5rem;
+                padding: 2rem;
             }
 
-            .container {
-                padding-top: 2rem;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -176,54 +178,56 @@
 
 <div class="container">
     <div class="intro">
-        <h2>Nossos Serviços</h2>
-        <p>Expertise técnica e soluções inteligentes para transformar a tecnologia da sua empresa em vantagem competitiva.</p>
+        <h2>Serviços Especializados</h2>
+        <p>Tecnologia de ponta e suporte estratégico para o crescimento do seu negócio.</p>
     </div>
 
     <div class="services-grid">
         <div class="card">
             <h3>🛡️ Certificado Digital</h3>
-            <p>Emissão e renovação de certificados e-CPF e e-CNPJ com agilidade e total segurança jurídica.</p>
+            <p>Agilidade na emissão de e-CPF e e-CNPJ. Processo desburocratizado para você focar no que importa: sua empresa.</p>
         </div>
 
         <div class="card">
             <h3>📊 Gestão Empresarial (ERP)</h3>
-            <p>Sistemas integrados para controle financeiro, estoque, vendas e emissão simplificada de notas fiscais.</p>
+            <p>Sistemas robustos para controle de estoque, fluxo de caixa e emissão de notas fiscais em uma interface intuitiva.</p>
         </div>
 
         <div class="card">
-            <h3>🔒 Antivírus Corporativo</h3>
-            <p>Proteção avançada contra ameaças digitais e gestão de segurança para os dados da sua organização.</p>
+            <h3>🔒 Antivírus & Segurança</h3>
+            <p>Proteção contra ransomware e ataques cibernéticos com as melhores soluções de licenciamento do mercado.</p>
         </div>
 
         <div class="card">
-            <h3>🛠️ Suporte Técnico</h3>
-            <p>Manutenção especializada preventiva e corretiva de computadores, infraestrutura de redes e periféricos.</p>
+            <h3>🛠️ Suporte Técnico Proativo</h3>
+            <p>Mais que consertar erros, prevenimos falhas. Manutenção técnica especializada em hardware e redes.</p>
         </div>
 
         <div class="card">
             <h3>💻 Suporte em Sistemas</h3>
-            <p>Assistência técnica dedicada para softwares de gestão, automação comercial e suporte ao usuário.</p>
+            <p>Especialistas prontos para resolver problemas de software e otimizar o uso das ferramentas da sua empresa.</p>
         </div>
 
         <div class="card">
             <h3>📦 Revenda de Software</h3>
-            <p>Licenciamento oficial e soluções de prateleira ou sob medida conforme a demanda do seu negócio.</p>
+            <p>Licenciamento oficial Windows, Office e ferramentas específicas para produtividade corporativa.</p>
         </div>
     </div>
 
     <section class="contact-box">
-        <h2>Precisa de suporte especializado?</h2>
-        <p>Nossa equipe está pronta para ajudar. Solicite um orçamento ou tire suas dúvidas agora mesmo.</p>
-        <a href="mailto:aac14@aluno.ifal.edu.br" class="btn">Solicitar Orçamento</a>
-        <p style="margin-top: 20px; font-size: 0.9rem; color: #94a3b8;">
-            Contatos: <strong>aac14@aluno.ifal.edu.br</strong>
-        </p>
+        <div class="contact-text">
+            <h2>Pronto para elevar o nível da sua TI?</h2>
+            <p>Seja para suporte emergencial ou consultoria estratégica, nossa equipe está pronta para atender suas demandas com excelência técnica.</p>
+        </div>
+        <div class="contact-action">
+            <a href="mailto:aac14@aluno.ifal.edu.br" class="btn">Solicitar Orçamento Agora</a>
+            <p style="margin-top: 15px; color: #94a3b8;">aac14@aluno.ifal.edu.br</p>
+        </div>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 ACTI Soluções Digitais. Todos os direitos reservados.
+    &copy; 2026 ACTI Soluções Digitais. Soluções que movem o futuro.
 </footer>
 
 </body>
