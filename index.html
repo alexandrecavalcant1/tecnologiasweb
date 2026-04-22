@@ -1,225 +1,311 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alexandre Soluções Digitais</title> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alexandre Soluções Digitais - Certificados digitais, desenvolvimento web e sistemas de gestão para sua empresa.">
+    <title>Alexandre Soluções Digitais</title> 
 
-<style>
-:root {
-    --primaria: #0f172a;
-    --secundaria: #2563eb;
-    --destaque: #22c55e;
-    --fundo: #f1f5f9;
-    --branco: #ffffff;
-    --texto: #334155;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--fundo);
-    color: var(--texto);
-}
-    .topo-site {
-    background: var(--primaria);
-    color: #ffff;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-.marca {
-    font-size: 22px;
-    font-weight: bold;
-}
-.marca span { color: var(--secundaria); }
+    <style>
+        /* Reset padrão */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
 
-.menu ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.menu a:hover {
-    color: var(--secundaria);
-}
+        :root {
+            --cor-primaria: #0f172a;
+            --cor-secundaria: #2563eb;
+            --cor-destaque: #10b981;
+            --cor-destaque-hover: #059669;
+            --cor-fundo: #f8fafc;
+            --cor-texto: #334155;
+            --cor-texto-claro: #64748b;
+        }
 
-.destaque-topo {
-    background: linear-gradient(120deg, #0f172a, #2563eb);
-    color: white;
-    text-align: center;
-    padding: 90px 20px;
-}
-.destaque-topo h1 {
-    font-size: 2.6em;
-    margin-bottom: 15px;
-}
-.destaque-topo p {
-    max-width: 650px;
-    margin: 0 auto 30px;
-    opacity: 0.9;
-}
-.botao-acao {
-    background: var(--destaque);
-    color: white;
-    padding: 14px 32px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.botao-acao:hover {
-    background: #16a34a;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
 
-#area-servicos {
-    padding: 70px 5%;
-    max-width: 1200px;
-    margin: auto;
-}
+        /* Container padrão para centralizar conteúdo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Cabeçalho */
+        .cabecalho {
+            background-color: var(--cor-primaria);
+            color: #ffffff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .cabecalho .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo span { 
+            color: var(--cor-secundaria); 
+        }
+
+        .menu-navegacao ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .menu-navegacao a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .menu-navegacao a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* Hero Section (Área principal) */
+        .hero {
+            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 5%;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            color: #e2e8f0;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-cta:hover {
+            background-color: var(--cor-destaque-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Seção de Serviços */
+        .servicos {
+            padding: 80px 0;
+        }
 
         .titulo-secao {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 50px;
-    color: var(--primaria);
-}
-        .grid-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--cor-primaria);
+            margin-bottom: 60px;
+        }
 
-        .box-servico {
-    background: var(--branco);
-    padding: 30px;
-    border-radius: 12px;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-.box-servico:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
+        .card-servico {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
 
-.icone {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
+        .card-servico:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
 
-.box-servico h3 {
-    margin-bottom: 10px;
-    color: var(--primaria);
-}
-.box-servico p {
-    font-size: 14px;
-    line-height: 1.6;
-}
+        .card-servico i {
+            font-size: 2.5rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 20px;
+        }
 
-.rodape {
-    background: var(--primaria);
-    color: #cbd5e1;
-    text-align: center;
-    padding: 30px 15px;
-    margin-top: 50px;
-}
+        .card-servico h3 {
+            font-size: 1.3rem;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+        }
 
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 22px;
-    padding: 15px 18px;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
+        .card-servico p {
+            color: var(--cor-texto-claro);
+            font-size: 0.95rem;
+        }
 
-.whatsapp:hover {
-    transform: scale(1.1);
-}
+        /* Rodapé e Botão Flutuante */
+        .rodape {
+            background-color: var(--cor-primaria);
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 4px solid var(--cor-secundaria);
+        }
 
-@media(max-width:768px){
-    .topo-site {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-</style>
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
 
+        .btn-whatsapp:hover {
+            transform: scale(1.1) rotate(-10deg);
+        }
+
+        /* Responsividade básica */
+        @media (max-width: 768px) {
+            .cabecalho .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .btn-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header class="topo-site">
-    <div class="marca">Alexandre <span>Soluções Digitais</span></div>
-    <nav class="menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#area-servicos">Serviços</a></li>
-            <li><a href="#contato">Suporte</a></li>
-        </ul>
-    </nav>
-</header>
-    <h1>Soluções em Tecnologia</h1>
-<section id="area-servicos">
-    <h2 class="titulo-secao">Soluções para a sua empresa</h2>
-
-    <div class="grid-cards">
-
-        <div class="box-servico">
-            <div class="icone">🔐</div>
-            <h3>Certificados Digitais</h3>
-            <p>Emissão rápida e segura para pessoas físicas e jurídicas.</p>
+    <header class="cabecalho">
+        <div class="container">
+            <a href="#" class="logo">Alexandre <span>Soluções</span></a>
+            <nav class="menu-navegacao">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="box-servico">
-            <div class="icone">💻</div>
-            <h3>Desenvolvimento Web</h3>
-            <p>Sites profissionais e sistemas sob medida para sua empresa.</p>
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>Tecnologia que impulsiona o seu negócio</h1>
+                <p>Automatize processos, emita notas e certificados fiscais sem dor de cabeça com sistemas desenvolvidos sob medida para a sua empresa.</p>
+                <a href="https://wa.me/5582996105017" class="btn-cta" target="_blank">Falar com Consultor</a>
+            </div>
+        </section>
+
+        <section id="servicos" class="servicos">
+            <div class="container">
+                <h2 class="titulo-secao">Nossas Soluções</h2>
+
+                <div class="grid-servicos">
+                    <div class="card-servico">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Certificados Digitais</h3>
+                        <p>Emissão rápida, segura e sem burocracia para pessoas físicas e jurídicas.</p>
+                    </div>
+
+                    <div class="card-servico">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Criação de sites profissionais e sistemas gerenciais totalmente sob medida.</p>
+                    </div>
+
+                    <div class="card-servico">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <h3>Cobrança Bancária</h3>
+                        <p>Integração fluida com boletos via API e processamento de arquivos CNAB.</p>
+                    </div>
+
+                    <div class="card-servico">
+                        <i class="fa-solid fa-receipt"></i>
+                        <h3>Notas Fiscais</h3>
+                        <p>Configuração completa e automatizada de NF-e, NFC-e e NFS-e.</p>
+                    </div>
+
+                    <div class="card-servico">
+                        <i class="fa-solid fa-users-gear"></i>
+                        <h3>Folha de Pagamento</h3>
+                        <p>Automatização e segurança para o seu RH e departamento pessoal.</p>
+                    </div>
+
+                    <div class="card-servico">
+                        <i class="fa-solid fa-headset"></i>
+                        <h3>Suporte Remoto</h3>
+                        <p>Atendimento rápido e especializado para manter a sua operação rodando.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="rodape">
+        <div class="container">
+            <p>&copy; 2024 Alexandre Soluções Digitais. Todos os direitos reservados.</p>
         </div>
+    </footer>
 
-        <div class="box-servico">
-            <div class="icone">💳</div>
-            <h3>Cobrança Bancária</h3>
-            <p>Integração com boletos via API e CNAB.</p>
-        </div>
-
-        <div class="box-servico">
-            <div class="icone">🧾</div>
-            <h3>Notas Fiscais</h3>
-            <p>Configuração completa de NF-e, NFC-e e NFS-e.</p>
-        </div>
-
-        <div class="box-servico">
-            <div class="icone">👥</div>
-            <h3>Folha de Pagamento</h3>
-            <p>Automatização completa do RH e departamento pessoal.</p>
-        </div>
-
-        <div class="box-servico">
-            <div class="icone">🛠️</div>
-            <h3>Suporte Remoto</h3>
-            <p>Atendimento rápido para manter tudo funcionando.</p>
-        </div>
-
-    </div>
-</section>
-<footer class="rodape" id="contato">
-    <p><strong>Alexandre Soluções Digitais</strong></p>
-</footer>
-
-<a href="https://wa.me/5582996105017" class="whatsapp" target="_blank">
-    💬
-</a>
+    <a href="https://wa.me/5582996105017" class="btn-whatsapp" aria-label="Fale conosco no WhatsApp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
