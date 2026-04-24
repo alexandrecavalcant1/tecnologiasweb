@@ -14,8 +14,8 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#servicos">Portfólio de Serviços</a></li>
+                    <li><a href="#chamados" class="nav-btn">Abrir Chamado</a></li>
                 </ul>
             </nav>
         </div>
@@ -23,40 +23,120 @@
 
     <section id="inicio" class="hero">
         <div class="container">
-            <h2>Inovação e Segurança para o seu Negócio</h2>
-            <p>Desenvolvimento de software robusto, arquitetura de sistemas e soluções avançadas de cibersegurança.</p>
-            <a href="#contato" class="btn">Fale com um Especialista</a>
+            <h2>Engenharia de Software e Segurança Avançada</h2>
+            <p>De sistemas de gestão sob medida à perícia forense digital. Soluções completas para a continuidade do seu negócio.</p>
+            <a href="#servicos" class="btn btn-outline">Conheça as Soluções</a>
         </div>
     </section>
 
     <section id="servicos" class="services">
         <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
+            <h2 class="section-title">Nossas Especialidades</h2>
+            <p class="section-subtitle">Cobertura completa para a infraestrutura e segurança da sua empresa.</p>
+            
             <div class="grid-services">
-                
                 <div class="card">
                     <div class="icon">💻</div>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Sistemas sob medida e aplicações completas utilizando tecnologias como PHP, Python e JavaScript.</p>
+                    <h3>Desenvolvimento de Sistemas</h3>
+                    <p>Criação de softwares de gestão, sistemas web e automação utilizando PHP, Python e JavaScript.</p>
                 </div>
 
                 <div class="card">
                     <div class="icon">🛡️</div>
-                    <h3>Cibersegurança (SOC)</h3>
-                    <p>Defesa em profundidade, monitoramento contínuo e análise forense digital para proteger seus dados operacionais.</p>
+                    <h3>Cibersegurança e SOC</h3>
+                    <p>Monitoramento contínuo (Blue Team), defesa em profundidade e análise de vulnerabilidades.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🔍</div>
+                    <h3>Perícia Forense Digital</h3>
+                    <p>Investigação de incidentes, coleta de evidências, elaboração de laudos técnicos e auditoria de sistemas.</p>
                 </div>
 
                 <div class="card">
                     <div class="icon">⚙️</div>
                     <h3>Infraestrutura de Redes</h3>
-                    <p>Projetos de arquitetura de redes escaláveis e consultoria técnica especializada para empresas.</p>
+                    <p>Arquitetura de redes corporativas, configuração de servidores e gerenciamento de conectividade segura.</p>
                 </div>
 
+                <div class="card">
+                    <div class="icon">🪪</div>
+                    <h3>Certificação Digital</h3>
+                    <p>Emissão, renovação e consultoria para certificados digitais (e-CPF, e-CNPJ) para pessoas físicas e jurídicas.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🛠️</div>
+                    <h3>Suporte Técnico e Helpdesk</h3>
+                    <p>Manutenção preventiva e corretiva de hardware e software, com atendimento via SLA estruturado.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contato">
+    <section id="chamados" class="ticket-section">
+        <div class="container">
+            <div class="ticket-container">
+                <div class="ticket-info">
+                    <h2>Central de Chamados</h2>
+                    <p>Precisa de assistência técnica ou quer iniciar um novo projeto? Abra um ticket detalhando sua necessidade e nossa equipe técnica retornará prontamente.</p>
+                    <ul class="ticket-benefits">
+                        <li>✔️ Acompanhamento de status em tempo real</li>
+                        <li>✔️ Priorização por nível de urgência</li>
+                        <li>✔️ Histórico completo de atendimentos</li>
+                    </ul>
+                </div>
+                
+                <div class="ticket-form-wrapper">
+                    <form id="formChamado" class="ticket-form">
+                        <div class="form-group">
+                            <label for="nome">Nome ou Empresa</label>
+                            <input type="text" id="nome" required placeholder="Ex: João Silva ou Empresa X">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail de Contato</label>
+                            <input type="email" id="email" required placeholder="seu@email.com">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="categoria">Categoria do Serviço</label>
+                                <select id="categoria" required>
+                                    <option value="" disabled selected>Selecione...</option>
+                                    <option value="desenvolvimento">Bug/Melhoria em Sistema (Dev)</option>
+                                    <option value="seguranca">Incidente de Segurança / SOC</option>
+                                    <option value="redes">Problema de Rede / Servidor</option>
+                                    <option value="suporte">Suporte Técnico Geral</option>
+                                    <option value="certificado">Emissão de Certificado Digital</option>
+                                    <option value="outros">Outros Projetos</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group half">
+                                <label for="urgencia">Nível de Urgência</label>
+                                <select id="urgencia" required>
+                                    <option value="baixa">Baixa (Dúvidas/Projetos)</option>
+                                    <option value="media">Média (Impacto parcial)</option>
+                                    <option value="alta">Alta (Sistema parado/Incidente)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descricao">Descrição do Problema/Solicitação</label>
+                            <textarea id="descricao" rows="5" required placeholder="Descreva com o máximo de detalhes técnicos possíveis..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-full">Registrar Chamado</button>
+                        <div id="mensagem-sucesso" class="hidden">Chamado registrado com sucesso! Entraremos em contato.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <div class="container footer-content">
             <div class="footer-info">
                 <h3>Acti Soluções Digitais</h3>
@@ -64,7 +144,7 @@
             </div>
             <div class="footer-contact">
                 <p>📍 Arapiraca, Alagoas - Brasil</p>
-                <p>✉️ contato@actisolucoes.com.br</p>
+                <p>✉️ suporte@actisolucoes.com.br</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -72,5 +152,26 @@
         </div>
     </footer>
 
+    <script>
+        document.getElementById('formChamado').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o recarregamento da página
+            // Aqui entraria o código para enviar os dados via fetch() para o seu backend PHP
+            
+            const btn = this.querySelector('button');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('mensagem-sucesso').style.display = 'block';
+                this.reset();
+                btn.textContent = 'Registrar Chamado';
+                btn.disabled = false;
+                
+                setTimeout(() => {
+                    document.getElementById('mensagem-sucesso').style.display = 'none';
+                }, 4000);
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
