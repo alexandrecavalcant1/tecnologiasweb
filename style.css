@@ -1,15 +1,13 @@
-/* --- Variáveis de Cores (Identidade Visual) --- */
 :root {
-    --primary-color: #0d47a1; /* Azul corporativo */
-    --secondary-color: #1976d2; /* Azul claro */
-    --accent-color: #00e676; /* Verde tecnologia */
+    --primary-color: #0d47a1; 
+    --secondary-color: #1976d2; 
+    --accent-color: #00e676;
     --text-dark: #333333;
     --text-light: #f4f4f9;
     --bg-color: #ffffff;
     --bg-gray: #f5f7fa;
 }
 
-/* --- Reset Básico --- */
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +31,6 @@ body {
     margin: 0 auto;
 }
 
-/* --- Cabeçalho e Navegação --- */
 header {
     background-color: var(--primary-color);
     color: var(--text-light);
@@ -92,7 +89,6 @@ header {
     color: white !important;
 }
 
-/* --- Seção Principal (Hero) --- */
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
@@ -113,7 +109,6 @@ header {
     margin-right: auto;
 }
 
-/* --- Botões --- */
 .btn {
     display: inline-block;
     background-color: var(--accent-color);
@@ -323,7 +318,6 @@ footer {
     color: #888;
 }
 
-/* --- Responsividade (Mobile) --- */
 @media (max-width: 768px) {
     .header-flex {
         flex-direction: column;
