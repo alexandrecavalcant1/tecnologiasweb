@@ -67,58 +67,66 @@
         </div>
     </section>
 
-    <section id="chamados" class="ticket-section">
-        <div class="container">
-            <div class="ticket-container">
-                <div class="ticket-info">
-                    <h2>Central de Chamados</h2>
-                    <p>Utilize nossa central para solicitar suporte técnico, relatar problemas ou iniciar o planejamento de um novo projeto estrutural.</p>
-                    <ul class="ticket-benefits">
-                        <li>✔️ Acompanhamento direto com a equipe técnica</li>
-                        <li>✔️ SLAs definidos de acordo com a urgência</li>
-                        <li>✔️ Histórico completo de solicitações</li>
-                    </ul>
-                </div>
-                
-                <div class="ticket-form-wrapper">
-                    <form id="formChamado" class="ticket-form" action="#modal-sucesso">
-                        <div class="form-group">
-                            <label for="nome">Nome ou Razão Social</label>
-                            <input type="text" id="nome" name="nome" required placeholder="">
+   <section id="chamados" class="ticket-section">
+    <div class="container">
+        <div class="ticket-container">
+            
+            <div class="ticket-info">
+                <h2>Central de Chamados</h2>
+                <p>Utilize nossa central para solicitar suporte técnico, relatar problemas ou iniciar o planejamento de um novo projeto estrutural.</p>
+                <ul class="ticket-benefits">
+                    <li>✔️ Acompanhamento direto com a equipe técnica</li>
+                    <li>✔️ SLAs definidos de acordo com a urgência</li>
+                    <li>✔️ Histórico completo de solicitações</li>
+                </ul>
+            </div>
+            
+            <div class="ticket-form-wrapper">
+                <form id="formChamado" class="ticket-form" action="#modal-sucesso">
+                    <div class="form-group">
+                        <label for="nome">Nome ou Razão Social</label>
+                        <input type="text" id="nome" name="nome" required placeholder="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail Corporativo/Contato</label>
+                        <input type="email" id="email" name="email" required placeholder="">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="categoria">Solução / Categoria</label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="" disabled selected>Selecione o serviço...</option>
+                                <option value="boletos">Emissor de Boletos (CNAB ou API)</option>
+                                <option value="notas">Emissor de Notas Fiscais</option>
+                                <option value="sites">Desenvolvimento de Sites</option>
+                                <option value="sistemas">Desenvolvimento de Sistemas</option>
+                                <option value="certificados">Certificado Digital (A1/A3 PJ e PF)</option>
+                                <option value="folha">Folha de Pagamento</option>
+                                <option value="automacao">Automações com Python</option>
+                                <option value="outros">Outros / Suporte Geral</option>
+                            </select>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="email">E-mail Corporativo/Contato</label>
-                            <input type="email" id="email" name="email" required placeholder="">
-                        </div>
+                    </div> 
 
-                        <div class="form-row">
-                            <div class="form-group half">
-                                <label for="categoria">Solução / Categoria</label>
-                                <select id="categoria" name="categoria" required>
-                                    <option value="" disabled selected>Selecione o serviço...</option>
-                                    <option value="boletos">Emissor de Boletos (CNAB ou API)</option>
-                                    <option value="notas">Emissor de Notas Fiscais</option>
-                                    <option value="sites">Desenvolvimento de Sites</option>
-                                    <option value="sistemas">Desenvolvimento de Sistemas</option>
-                                    <option value="certificados">Certificado Digital (A1/A3 PJ e PF)</option>
-                                    <option value="folha">Folha de Pagamento</option>
-                                    <option value="automacao">Automações com Python</option>
-                                    <option value="outros">Outros / Suporte Geral</option>
-                                </select>
-                            </div>
+                    <div class="form-group">
+                        <label for="descricao">Detalhamento da Solicitação</label>
+                        <textarea id="descricao" name="descricao" rows="5" required placeholder="Por favor, forneça o máximo de detalhes técnicos e de negócio..."></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="descricao">Detalhamento da Solicitação</label>
-                            <textarea id="descricao" name="descricao" rows="5" required placeholder="Por favor, forneça o máximo de detalhes técnicos e de negócio..."></textarea>
-                        </div>
+                    <button type="submit" class="btn btn-full">Registrar Chamado</button>
+                </form>
+            </div> 
+            
+        </div> 
+    </div> 
+</section> 
 
-                        <button type="submit" class="btn btn-full">Registrar Chamado</button>
-                    </form>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Alexandre Soluções Digitais. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+<footer> 
+    <div class="footer-bottom">
+        <p>&copy; 2026 Alexandre Soluções digitais. Todos os direitos reservados.</p>
+    </div>
+</footer>
 </body>
 </html>
