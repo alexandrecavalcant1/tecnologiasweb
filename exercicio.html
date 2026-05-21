@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -81,7 +80,7 @@ function VOGAL(c) {
     <div class="card">
         <h5>3) Intervalo e Soma</h5>
         <div class="form-group">
-            <label>Limites (Inferior e Superior):</label>
+            <label>Limites:</label>
             <input type="number" id="lim_inf" class="inline-input">
             <input type="number" id="lim_sup" class="inline-input">
         </div>
@@ -121,8 +120,6 @@ function VOGAL(c) {
 
 
 </script>
-
-
     <div class="card">
         <h5>4) Ordenar 3 Valores </h5>
         <div class="form-group">
@@ -135,43 +132,6 @@ function VOGAL(c) {
         <div class="resultado" id="res_ordem"></div>
     </div>
 
-    <div class="card">
-        <h5>5) Positivo e Negativo </h5>
-        <div class="form-group">
-            <label for="val_pos_neg">Digite um valor:</label>
-            <input type="number" id="val_pos_neg">
-        </div>
-        <button onclick="executarPosNeg()">Verificar</button>
-        <div class="resultado" id="res_pos_neg"></div>
-    </div>
-
-<script>
-function PAR_IMPAR(x) {
-        return x % 2 === 0;
-    }
-
-    function executarParImp() {
-        let x = parseInt(document.getElementById('validar_par_ou_impar').value);
-        if (isNaN(x)) {
-            document.getElementById('res_par_imp').innerText = "Digite um número.";
-            return;
-        }
-        let resultado = PAR_IMPAR(x);
-        document.getElementById('res_par_imp').innerText = `(${resultado ? 'Par' : 'Ímpar'})`;
-    }
-</script>
-
-
-    <div class="card">
-        <h5>6) Par ou Ímpar</h5>
-        <div class="form-group">
-            <label for="val_par_imp">Digite um valor inteiro:</label>
-            <input type="number" id="validar_par_ou_impar">
-        </div>
-        <button onclick="executarParImp()">Verificar</button>
-        <div class="resultado" id="res_par_imp"</div>
-    </div>
-</div>
 
 <script>
         function ORDEM(a, b, c) {
@@ -189,6 +149,21 @@ function PAR_IMPAR(x) {
         let ordenados = ORDEM(a, b, c);
         document.getElementById('res_ordem').innerText = `Valores ordenados: ${ordenados.join(', ')}`;
     }
+</script>
+
+
+    <div class="card">
+        <h5>5) Positivo e Negativo </h5>
+        <div class="form-group">
+            <label for="val_pos_neg">Digite um valor:</label>
+            <input type="number" id="val_pos_neg">
+        </div>
+        <button onclick="executarPosNeg()">Verificar</button>
+        <div class="resultado" id="res_pos_neg"></div>
+    </div>
+
+
+<script>
 
         function POSITIVO_NEGATIVO(x) {
         return x >= 0;
@@ -201,11 +176,40 @@ function PAR_IMPAR(x) {
             return;
         }
         let resultado = POSITIVO_NEGATIVO(x);
-        document.getElementById('res_pos_neg').innerText = `Retorno: ${resultado} (${resultado ? 'Positivo' : 'Negativo'})`;
+        document.getElementById('res_pos_neg').innerText = ` ${resultado ? 'Positivo' : 'Negativo'}`;
     }
 
     
 </script>
+
+    <div class="card">
+        <h5>6) Par ou Ímpar</h5>
+        <div class="form-group">
+            <label for="val_par_imp">Digite um valor inteiro:</label>
+            <input type="number" id="validar_par_ou_impar">
+        </div>
+        <button onclick="executarParImp()">Verificar</button>
+        <div class="resultado" id="res_par_imp"</div>
+    </div>
+</div>
+
+
+<script>
+function PAR_IMPAR(x) {
+        return x % 2 === 0;
+    }
+
+    function executarParImp() {
+        let x = parseInt(document.getElementById('validar_par_ou_impar').value);
+        if (isNaN(x)) {
+            document.getElementById('res_par_imp').innerText = "Digite um número.";
+            return;
+        }
+        let resultado = PAR_IMPAR(x);
+        document.getElementById('res_par_imp').innerText = `${resultado ? 'Par' : 'Ímpar'}`;
+    }
+</script>
+
 
 </body>
 </html>
