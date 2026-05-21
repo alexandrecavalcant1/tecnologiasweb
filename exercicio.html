@@ -1,1 +1,211 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="card">
+        <h5>1) Maior e Menor</h5>
+        <div class="form-group">
+            <label>Digite os valores:</label>
+            <br>
+            <input type="number" id="v1" class="inline-input">
+            <br>
+            <input type="number" id="v2">
+            <br>
+            <input type="number" id="v3">
+            <br>
+            <input type="number" id="v4">
+            <br>
+            <input type="number" id="v5" class="inline-input">
+        </div>
+        <button onclick="MaiorMenor()">Verificar</button>
+        <div class="resultado" id="res_maior_menor"></div>
+    </div>
+
+<script>
+    function MAIOR_MENOR(a, b, c, d, e) {
+        let maior = Math.max(a, b, c, d, e);
+        let menor = Math.min(a, b, c, d, e);
+        return `Maior valor: ${maior}\nMenor valor: ${menor}`;
+    }
+
+    function MaiorMenor() {
+        let a = parseInt(document.getElementById('v1').value);
+        let b = parseInt(document.getElementById('v2').value);
+        let c = parseInt(document.getElementById('v3').value);
+        let d = parseInt(document.getElementById('v4').value);
+        let e = parseInt(document.getElementById('v5').value);
+
+        let resultado = MAIOR_MENOR(a, b, c, d, e);
+        document.getElementById('res_maior_menor').innerText = resultado;
+    }
+</script>
+
+
+    <div class="card">
+        <h5>2) Verificar Vogal</h5>
+            <label for="caractere">Digite uma letra:</label>
+            <input type="text" id="caractere" maxlength="1" >
+        </div>
+        <button onclick="executarVogal()">Verificar</button>
+        <div class="" id="res_vogal"</div>
+    </div>
+
+<script>
+function VOGAL(c) {
+        let caracterMinusculo = c.toLowerCase();
+        let vogais = ['a', 'e', 'i', 'o', 'u'];
+        
+        if (vogais.includes(caracterMinusculo)) {
+            return "É vogal";
+        } else {
+            return "Não é vogal";
+        }
+    }
+
+    function executarVogal() {
+        let c = document.getElementById('caractere').value;
+        if(c.length === 0) {
+            document.getElementById('res_vogal').innerText = "Digite um caractere.";
+            return;
+        }
+        let resultado = VOGAL(c);
+        document.getElementById('res_vogal').innerText = ` ${resultado}`;
+    }
+</script>
+
+
+    <div class="card">
+        <h5>3) Intervalo e Soma</h5>
+        <div class="form-group">
+            <label>Limites (Inferior e Superior):</label>
+            <input type="number" id="lim_inf" class="inline-input">
+            <input type="number" id="lim_sup" class="inline-input">
+        </div>
+        <button onclick="executarLimites()">Calcular</button>
+        <div class="resultado" id="res_limites"></div>
+    </div>
+
+
+<script>
+    
+    function LIMITES(li, ls) {
+        let pares = [];
+        let somatorio = 0;
+        
+        for (let i = li + 1; i < ls; i++) {
+            if (i % 2 === 0) {
+                pares.push(i);
+                somatorio += i;
+            }
+        }
+        
+     return `Pares: ${pares.length > 0 ? pares.join(', ') : 'Nenhum'}\nSoma: ${somatorio}`;
+    }
+
+    function executarLimites() {
+        let li = parseInt(document.getElementById('lim_inf').value);
+        let ls = parseInt(document.getElementById('lim_sup').value);
+        
+        if (li >= ls) {
+            document.getElementById('res_limites').innerText = "O limite inferior deve ser menor que o superior.";
+            return;
+        }
+        
+        let resultado = LIMITES(li, ls);
+        document.getElementById('res_limites').innerText = resultado;
+    }
+
+
+</script>
+
+
+    <div class="card">
+        <h5>4) Ordenar 3 Valores </h5>
+        <div class="form-group">
+            <label>Digite 3 valores inteiros:</label>
+            <input type="number" id="o1" class="inline-input">
+            <input type="number" id="o2" class="inline-input">
+            <input type="number" id="o3" class="inline-input">
+        </div>
+        <button onclick="executarOrdem()">Ordenar</button>
+        <div class="resultado" id="res_ordem"></div>
+    </div>
+
+    <div class="card">
+        <h5>5) Positivo e Negativo </h5>
+        <div class="form-group">
+            <label for="val_pos_neg">Digite um valor:</label>
+            <input type="number" id="val_pos_neg">
+        </div>
+        <button onclick="executarPosNeg()">Verificar</button>
+        <div class="resultado" id="res_pos_neg"></div>
+    </div>
+
+<script>
+function PAR_IMPAR(x) {
+        return x % 2 === 0;
+    }
+
+    function executarParImp() {
+        let x = parseInt(document.getElementById('validar_par_ou_impar').value);
+        if (isNaN(x)) {
+            document.getElementById('res_par_imp').innerText = "Digite um número.";
+            return;
+        }
+        let resultado = PAR_IMPAR(x);
+        document.getElementById('res_par_imp').innerText = `(${resultado ? 'Par' : 'Ímpar'})`;
+    }
+</script>
+
+
+    <div class="card">
+        <h5>6) Par ou Ímpar</h5>
+        <div class="form-group">
+            <label for="val_par_imp">Digite um valor inteiro:</label>
+            <input type="number" id="validar_par_ou_impar" value="7">
+        </div>
+        <button onclick="executarParImp()">Verificar</button>
+        <div class="resultado" id="res_par_imp"</div>
+    </div>
+</div>
+
+<script>
+        function ORDEM(a, b, c) {
+        let vetor = [a, b, c];
+        // Ordenação numérica crescente
+        vetor.sort((x, y) => x - y);
+        return vetor;
+    }
+
+    function executarOrdem() {
+        let a = parseInt(document.getElementById('o1').value);
+        let b = parseInt(document.getElementById('o2').value);
+        let c = parseInt(document.getElementById('o3').value);
+        
+        let ordenados = ORDEM(a, b, c);
+        document.getElementById('res_ordem').innerText = `Valores ordenados: ${ordenados.join(', ')}`;
+    }
+
+        function POSITIVO_NEGATIVO(x) {
+        return x >= 0;
+    }
+
+    function executarPosNeg() {
+        let x = parseInt(document.getElementById('val_pos_neg').value);
+        if (isNaN(x)) {
+            document.getElementById('res_pos_neg').innerText = "Digite um número.";
+            return;
+        }
+        let resultado = POSITIVO_NEGATIVO(x);
+        document.getElementById('res_pos_neg').innerText = `Retorno: ${resultado} (${resultado ? 'Positivo' : 'Negativo'})`;
+    }
+
+    
+</script>
+
+</body>
+</html>
